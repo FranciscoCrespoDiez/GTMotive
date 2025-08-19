@@ -28,7 +28,9 @@ namespace GtMotive.Estimate.Microservice.Infrastructure.MongoDb.Vehicles
                 .ToListAsync(ct);
 
             var domain = docs.Select(Map);
+#pragma warning disable IDE0306
             return new VehicleCollection(domain);
+#pragma warning restore IDE0306
         }
 
         public async Task<long> CountAsync(string vinOrPlate, CancellationToken ct)
