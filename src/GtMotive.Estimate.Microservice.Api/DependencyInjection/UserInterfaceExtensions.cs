@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using GtMotive.Estimate.Microservice.Api.UseCases.Vehicles;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace GtMotive.Estimate.Microservice.Api.DependencyInjection
 {
@@ -6,6 +7,7 @@ namespace GtMotive.Estimate.Microservice.Api.DependencyInjection
     {
         public static IServiceCollection AddPresenters(this IServiceCollection services)
         {
+            services.AddScoped<GetVehiclesPresenter>();
             return services;
         }
     }
